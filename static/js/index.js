@@ -253,14 +253,14 @@ function visualize(data){
                 svg.select(".xAxis").transition().duration(300).call(xAxis)
                 
                 
-                d3.selectAll("circle").each(function(){
-                    d3.select(this).transition("cx", function(d){
+                d3.selectAll(".stateCircle").each(function(){
+                    d3.select(this).transition().attr("cx", function(d){
                         return xScale(d[currentX])
                     }).duration(300)
                 })
 
                 d3.selectAll(".stateText").each(function(){
-                    d3.select(this).transition("dx", function(d){
+                    d3.select(this).transition().attr("dx", function(d){
                         return xScale(d[currentX])
                     }).duration(300)
                 })
@@ -276,13 +276,13 @@ function visualize(data){
                 yScale.domain([yMin, yMax])
                 svg.select(".yAxis").transition().duration(300).call(yAxis)
                 d3.selectAll("circle").each(function(){
-                    d3.select(this).transition("cy", function(d){
+                    d3.select(this).transition().attr("cy", function(d){
                         return yScale(d[currentY])
                     }).duration(300)
                 })
 
                 d3.selectAll(".stateText").each(function(){
-                    d3.select(this).transition("dx", function(d){
+                    d3.select(this).transition().attr("dy", function(d){
                         return yScale(d[currentY])
                     }).duration(300)
                 })
